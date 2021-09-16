@@ -37,7 +37,7 @@ func addEntries(w http.ResponseWriter, req *http.Request) {
 				entry = value[0]
 			}
 		}
-		fmt.Fprintf(w, author, ":", entry)
+		fmt.Println(w, author, ":", entry)
 
 		line += entry + "\n"
 
