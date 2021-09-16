@@ -30,13 +30,14 @@ func addEntries(w http.ResponseWriter, req *http.Request) {
 		}
 		for key, value := range req.PostForm {
 
-			if key == "author"{
+			switch key{
+			case "author":
 				author = value[0]
-			}else if  key == "entry"{
+			case "entry":
 				entry = value[0]
 			}
-			fmt.Println(author, ":", entry)
 		}
+		fmt.Fprintf(w, author, ":", entry)
 
 		line += entry + "\n"
 
